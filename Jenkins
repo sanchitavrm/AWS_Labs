@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Submit Stack') {
             steps {
-            sh "aws cloudformation create-stack --stack-name ecinstance10 --template-body file://ec2.yaml --tags Key=Name,Value=114poc01 --region 'us-east-1'"
+            sh "AWS_CONFIG_FILE=/home/ubuntu/.aws/config aws cloudformation create-stack --stack-name ecinstance10 --template-body file://ec2.yaml --tags Key=Name,Value=114poc01 --region 'us-east-1'"
               }
              }
             }
